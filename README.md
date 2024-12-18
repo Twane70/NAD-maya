@@ -38,7 +38,7 @@ Télécharger et dézipper le dossier. Installer les pour Maya les dépendances 
 ```
 
 
-Ouvir Maya. Importer `marching_cubes.py` dans l'éditeur de script. Lancer le script.
+Ouvir Maya. Importer `main_script/marching_cubes.py` dans l'éditeur de script. Lancer le script.
 
 *Optionnel* : Dans l'éditeur de script, le bouton `Save script to Shelf...` permet de créer un bouton dans Maya pour lancer le script en 1 clic.
 ![shelf](captures/script_shelf.png)
@@ -47,7 +47,7 @@ Ouvir Maya. Importer `marching_cubes.py` dans l'éditeur de script. Lancer le sc
 Le lancement du script affiche une fenêtre :
 ![ui](captures/ui.png)
 
-Le premier bouton permet de sélectionner le scanner qu'on veut ouvrir. J'en ai téléchargé quelques exemples dans le dossier `scan_example_files`, tirés de [ce site](https://johnmuschelli.com/high_res_ct_template/template/).
+Le premier bouton permet de sélectionner le scanner qu'on veut ouvrir. J'en ai téléchargé quelques exemples dans le dossier `scan_examples`, tirés de [ce site](https://johnmuschelli.com/high_res_ct_template/template/).
 
 Puis, grâce aux sliders, on sélectionne la plage de densité qui nous intéresse, et dont on veut tracer les contours : par défaut, de 0.5 à 0.8.
 
@@ -71,7 +71,7 @@ Enfin, on nettoie rapidement le mesh : recalcul des normales et *smooth*.
 
 *Message de confirmation*
 
-Un exemple de 3 résultats de mesh pour 3 plages de densités différentes (cf. leur nom) est disponible dans la scène maya `captures/example_outputs.mb`.
+Un exemple de 3 résultats de mesh pour 3 plages de densités différentes (cf. leur nom) est disponible dans la scène maya `example_scene/outputs.mb`.
 
 ## Limites
 
@@ -79,12 +79,12 @@ Le cube unité doit "marcher" tout le long du nuage de point, ce qui le rend peu
 
 Quand on double la résolution, on passe de `n` à `n²` points, le temps d'exécution augmente donc quadratiquement. 
 
-On peut l'observer avec le fichier `[HEAVY]template_with_skull_0_5mm`, échantillonné à 0.5mm², qui met ~20min à s'ouvrir (quand Maya plante pas), alors que le fichier `template_with_skull_2mm`, échantillonné à 2mm², met ~20sec.
+On peut l'observer avec le fichier (dans le dossier `scan_examples`) `[HEAVY]template_with_skull_0_5mm`, échantillonné à 0.5mm², qui met ~20min à s'ouvrir (quand Maya plante pas), alors que le fichier `template_with_skull_2mm`, échantillonné à 2mm², met ~20sec.
 
 Pour résoudre ce problème, je pense qu'on pourrait tirer parti que chaque cube peut être traité parallèlement, en s'intéressant à un traitement GPU grâce à CUDA, mais je doute que ce soit facilement compatible avec Maya.
 
 ## Bonus
 
-Au lieu de choisir la plage de densité à l'aveugle (lower et upper bound), j'ai fait un petit script indépendant `bonus/previz_data.py` qui permet d'afficher rapidement une coupe du scan. En passant la souris sur les zones qui nous intéressent, on récupère leur valeur en haut à droite.
+Au lieu de choisir la plage de densité à l'aveugle (lower et upper bound), j'ai fait un petit script indépendant `utils/previz_data.py` qui permet d'afficher rapidement une coupe du scan. En passant la souris sur les zones qui nous intéressent, on récupère leur valeur en haut à droite.
 
 ![coupe](captures/slice.png)
