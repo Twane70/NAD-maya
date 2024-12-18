@@ -71,7 +71,7 @@ Enfin, on nettoie rapidement le mesh : recalcul des normales et *smooth*.
 
 *Message de confirmation*
 
-Un exemple de 3 résultats de mesh pour 3 plages de densités différentes (cf. leur nom) est disponible dans la scène maya `captures/explame_outputs.mb`.
+Un exemple de 3 résultats de mesh pour 3 plages de densités différentes (cf. leur nom) est disponible dans la scène maya `captures/example_outputs.mb`.
 
 ## Limites
 
@@ -79,7 +79,7 @@ Le cube unité doit "marcher" tout le long du nuage de point, ce qui le rend peu
 
 Quand on double la résolution, on passe de `n` à `n²` points, le temps d'exécution augmente donc quadratiquement. 
 
-On peut l'observer avec le fichier `skull_EXTREME_RES`, échantillonné à 0.5mm², qui met ~20min à s'ouvrir (quand Maya plante pas), alors que le fichier `structures_HIGH_RES`, échantillonné à 1mm², met ~2min.
+On peut l'observer avec le fichier `[HEAVY]template_with_skull_0_5mm`, échantillonné à 0.5mm², qui met ~20min à s'ouvrir (quand Maya plante pas), alors que le fichier `template_with_skull_2mm`, échantillonné à 2mm², met ~20sec.
 
 Pour résoudre ce problème, je pense qu'on pourrait tirer parti que chaque cube peut être traité parallèlement, en s'intéressant à un traitement GPU grâce à CUDA, mais je doute que ce soit facilement compatible avec Maya.
 

@@ -1,8 +1,9 @@
+# pip install nibabel matplotlib
 import nibabel as nib
 import matplotlib.pyplot as plt
 import os
 
-img = nib.load("scan_example_files/structures_HIGH_RES.nii")
+img = nib.load("scan_example_files/structures_1mm.nii")
 
 data = img.get_fdata()
 data = (data - data.min()) / (data.max() - data.min())
