@@ -1,17 +1,17 @@
-> *Pour télécharger ce dossier depuis GiHub > Bouton vert "**Code**"*
+> *Développement d'une extension Maya pour la reconstruction de scanners médicaux*
 # Marching Cubes
 
 ### Avant propos
-J'ai découvert les Marching Cubes par hasard dans un cours de chimie, où étaient représentés des orbitales atomiques autour d'une molécule.
+Ce projet explore l'utilisation des Marching Cubes pour un usage d'imagerie médicale. J'ai découvert les Marching Cubes par hasard dans le domaine de la chimie, où étaient représentés des orbitales atomiques autour d'une molécule.
 ![orbitales moléculaires](/captures/orbitales.png)
 En fait, les fonctions quantiques ne permettent que de calculer la probabilté de présence des électrons à des points données de l'espace.
 Pour pouvoir représenter ces lobes, il faut fixer une "probabilité frontière", et construire une surface là où la fonction de probabilité donne des résultats inférieurs.
 
 Cette opération -pas si triviale- est exécutée par la technique des "Marching Cubes" : un cube unité va "marcher" tout le long du champ de valeurs et progressivement construire la surface triangle par triangle.
 
-Ce projet était l'occasion parfaite d'explorer cette curiosité ! [Cette vidéo](https://youtu.be/M3iI2l0ltbE) expliquera sans doute le principe des Marching Cubes mieux que moi, et j'avais envisagé au départ d'imiter son utilisation pour de la création d'environnement 3D.
+Le présent projet explore cette curiosité algorithmique ! Plus d'infos sur les Marching Cubes dans [cette vidéo](https://youtu.be/M3iI2l0ltbE).
 
-Puis, une fois l'algorithme apprivoisé, j'ai finalement expérimenté ma propre approche en proposant un outil original destiné à la reconstruction de scanners médicaux.
+Puis, une fois l'algorithme apprivoisé pour la création d'environnements 3D, j'ai finalement expérimenté ma propre approche en proposant un outil original destiné à la reconstruction de scanners médicaux.
 
 ## Principe
 
